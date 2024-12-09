@@ -1,4 +1,5 @@
 <?php
+
 // start session
 session_start();
 
@@ -20,13 +21,14 @@ $users = $_SESSION['users'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="css/profile.css" rel="stylesheet">
 
 
     <title>Profile | Fetter</title>
 </head>
 <body>
 
-    <header class="navbar-light fixed-top header-static bg-mode">
+    <header class="navbar-light fixed-top header-static bg-mode mb-5">
         <nav class="navbar navbar-expand-sm bg-light">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
@@ -45,143 +47,112 @@ $users = $_SESSION['users'];
                                         <h6 class="m-0">Notifications <span class="badge bg-danger bg-opacity-10 text-danger ms-2"></span></h6>
                                         <a class="small" href="#">Clear all</a>
                                     </div>
-                                    <div class="card-body p-0">
-                                        <ul class="list-group list-group-flush list-unstyled p-2">
-                                            <!-- Notif item -->
-                                            <li>
-                                                <div class="list-group-item list-group-item-action rounded badge-unread d-flex border-0 mb-1 p-3">
-                                                    <div class="avatar text-center d-none d-sm-inline-block">
-                                                        <img class="avatar-img rounded-circle" src="" alt="">
-                                                    </div>
-                                                    <div class="ms-sm-3">
-                                                        <div class=" d-flex">
-                                                            <p class="small mb-2"></p>
-                                                            <p class="small ms-3 text-nowrap"></p>
-                                                        </div>
-                                                        <div class="d-flex">
-                                                            <button class="btn btn-sm py-1 btn-primary me-2"> </button>
-                                                            <button class="btn btn-sm py-1 btn-danger-soft"> </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <!-- Notif item -->
-                                            <li>
-                                                <div class="list-group-item list-group-item-action rounded badge-unread d-flex border-0 mb-1 p-3 position-relative">
-                                                    <div class="avatar text-center d-none d-sm-inline-block">
-                                                        <img class="avatar-img rounded-circle" src="" alt="">
-                                                    </div>
-                                                    <div class="ms-sm-3 d-flex">
-                                                        <div>
-                                                            <p class="small mb-2"></p>
-                                                            button class="btn btn-sm btn-outline-light py-1 me-2"></button>
-                                                        </div>
-                                                            <p class="small ms-3"></p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <!-- Notif item -->
-                                            <li>
-                                                <a href="#" class="list-group-item list-group-item-action rounded d-flex border-0 mb-1 p-3">
-                                                    <div class="avatar text-center d-none d-sm-inline-block">
-                                                        <div class="avatar-img rounded-circle bg-success"><span class="text-white position-absolute top-50 start-50 translate-middle fw-bold">WB</span></div>
-                                                    </div>
-                                                    <div class="ms-sm-3">
-                                                        <div class="d-flex">
-                                                            <p class="small mb-2"></p>
-                                                            <p class="small ms-3"></p>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <!-- Notif item -->
-                                            <li>
-                                                <a href="#" class="list-group-item list-group-item-action rounded d-flex border-0 p-3 mb-1">
-                                                    <div class="avatar text-center d-none d-sm-inline-block">
-                                                        <img class="avatar-img rounded-circle" src="" alt="">
-                                                    </div>
-                                                    <div class="ms-sm-3 d-flex">
-                                                        <p class="small mb-2">
-                                                        <p class="small ms-3"></p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                        </ul>
+                                    
                                     </div>
-                                </div>
-                            </div>
-                    </li>
-                    <li class="nav-item ms-2 dropdown">
-					<a class="nav-link btn icon-md p-0 show" href="profile.php" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="true">
-						<img class="avatar-img rounded-2" src="images/profile/" alt="">
-					</a>
-          <ul class="dropdown-menu dropdown-animation dropdown-menu-end pt-3 small me-md-n3 show" aria-labelledby="profileDropdown" data-bs-popper="static">
-            <!-- Profile info -->
-            <li class="px-3">
-              <div class="d-flex align-items-center position-relative">
-                <!-- Avatar -->
-                <div class="avatar me-3">
-                  <img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg" alt="avatar">
-                </div>
-                <div>
-                  <a class="h6 stretched-link" href="#">Lori Ferguson</a>
-                  <p class="small m-0">Web Developer</p>
-                </div>
-              </div>
-              <a class="dropdown-item btn btn-primary-soft btn-sm my-2 text-center" href="my-profile.html">View profile</a>
-            </li>
-            <!-- Links -->
-            <li class="dropdown-divider"></li>
-            <li><a class="dropdown-item bg-danger-soft-hover" href=""><i class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
-            <li> <hr class="dropdown-divider"></li>
-            <!-- Dark mode options START -->
-						<li>
-							<div class="modeswitch-item theme-icon-active d-flex justify-content-center gap-3 align-items-center p-2 pb-0">
-								<span>Mode:</span>
-								<button type="button" class="btn btn-modeswitch nav-link text-primary-hover mb-0 active" data-bs-theme-value="light" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Light">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun fa-fw mode-switch" viewBox="0 0 16 16">
-										<path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
-										<use href="#"></use>
-									</svg>
-								</button>
-								<button type="button" class="btn btn-modeswitch nav-link text-primary-hover mb-0" data-bs-theme-value="dark" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Dark">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars fa-fw mode-switch" viewBox="0 0 16 16">
-										<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z"></path>
-										<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
-										<use href="#"></use>
-									</svg>
-								</button>
-								<button type="button" class="btn btn-modeswitch nav-link text-primary-hover mb-0" data-bs-theme-value="auto" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Auto">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half fa-fw mode-switch" viewBox="0 0 16 16">
-										<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
-										<use href="#"></use>
-									</svg>
-								</button>
-							</div>
-						</li> 
-						<!-- Dark mode options END-->
-          </ul>
-				</li>
-
+                                </div>                          
+                     </li>
                 </ul>
             </div>
         </nav>
     </header>
 
 
-            
-    <h1>User Registration!</h1>
+    <div class="container mt-5 ">
+        <div class="row">
+            <div class="col-lg-3 ">
+               
+            <form action="actions/profileupload_action.php" method="post" enctype="multipart/form-data" class="mb-3">
+                <div class="d-flex justify-content-center align-items-center vh-100">
+                    <div class="shadow w-350 p-3 text-center">
+                        <div class="user-image mb-3 text-center">
+                            <div style="width: 100px; height:100px; overflow: hidden; background: #cccccc; margin:0 auto">
+                                <img src="images/Profile" class="figure-img img-fluid rounded" id="imgPlaceholder" alt="" >
+                            </div>
+                        </div>
+                        <h3 class="display-4"><?php echo ucfirst($users['name']); ?></h3>
+                        <input type="file" name="image" class="form-control" >
+                        <br>
+                        <input type="submit" value="Upload" name="upload" class="btn btn-success">
+                       
+                    </div>
+                </div>
+            </form>
+            </div>
+            <div class="col-lg-6 p-3 mt-5">
+            <div class="card card-body">
+					<div class="d-flex mb-3">
+						<!-- Avatar -->
+						<div class="avatar avatar-xs me-2">
+							<a href="#"> <img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt=""> </a>
+						</div>
+						<!-- Post input -->
+						<form class="w-100">
+							<textarea class="form-control pe-4 border-0" rows="2" data-autoresize="" placeholder="Share your thoughts..."></textarea>
+						</form>
+					</div>
+					<!-- Share feed toolbar START -->
+					<ul class="nav nav-pills nav-stack small fw-normal">
+						<li class="nav-item">
+							<a class="nav-link bg-light py-1 px-2 mb-0" href="#!" data-bs-toggle="modal" data-bs-target="#feedActionPhoto"> <i class='bx bxs-photo-album' style='color:#18d535'  ></i>Photo</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link bg-light py-1 px-2 mb-0" href="#!" data-bs-toggle="modal" data-bs-target="#feedActionVideo"> <i class='bx bxs-videos'></i>Video</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link bg-light py-1 px-2 mb-0" data-bs-toggle="modal" data-bs-target="#modalCreateEvents"> <i class='bx bxs-calendar-event' style='color:#e52222'></i> Event </a>
+						</li>						
+					</ul>
+					<!-- Share feed toolbar END -->
+				</div>
+                <h3 class="text-center mt-5">Display Image</h3>
+                <?php
+// SQL to select users who do not have an image (NULL or empty string)
+$sql = "SELECT * FROM users WHERE image IS NULL OR image = ''";
+$result = mysqli_query($conn, $sql);
 
-    <form action="" method="post">
+if ($result) {
+    // Iterate through the result set
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Access the row data, for example:
+        $user_id = $row['user_id'];
+        $image = $row['image'];  // This will be NULL or empty for these users
 
-    <h1>Welcome <?php echo ucfirst($users['name']); ?></h1>
-        Name: <input type="text" name="name"><br>
-        <input type="submit" value="Register">
-    </form>
+        // Display or process the data, for example:
+        echo "User ID: " . $user_id . "<br>";
+        echo "Image: No image available<br><br>";
+    }
+} else {
+    echo "Error fetching data: " . mysqli_error($conn);
+}
+?>
 
+
+            </div>
+            <div class="col-lg-3 mt-5"></div>
+        </div>
+    </div>
+ 
     <a href="logout.php">Logout</a>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function readURL(input){
+    if(input.files && input.files[0]){
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#imgPlaceholder').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]); //covert to base64 string
+
+    }
+}
+
+$("#chooseFile").change(function () {
+    readURL(this);
+});
+    </script>
 
 </body>
 </html>
